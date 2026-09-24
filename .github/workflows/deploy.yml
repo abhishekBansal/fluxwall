@@ -3,6 +3,7 @@ name: Deploy FluxWall website
 on:
   push:
     branches:
+      - main
       - master
       - fluxwall-release
     paths:
