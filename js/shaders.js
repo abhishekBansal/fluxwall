@@ -25,19 +25,19 @@ export const SHADER_EFFECTS = [
       },
       {
         "id": "warp_mode",
-        "label": "Time Warp Mode",
+        "label": "Extra Warp",
         "type": "boolean",
         "default": false
       },
       {
         "id": "square_tunnel",
-        "label": "Square Shape Tunnel",
+        "label": "Square Shape",
         "type": "boolean",
         "default": false
       },
       {
         "id": "center_bright",
-        "label": "Make Center Bright",
+        "label": "Bright Center",
         "type": "boolean",
         "default": false
       },
@@ -65,7 +65,7 @@ export const SHADER_EFFECTS = [
     "parameters": [
       {
         "id": "flow_mode",
-        "label": "Flow Mode",
+        "label": "Movement",
         "type": "select",
         "options": [
           {
@@ -117,7 +117,7 @@ export const SHADER_EFFECTS = [
       },
       {
         "id": "dye_density",
-        "label": "Dye Density",
+        "label": "Color Intensity",
         "min": 0.3,
         "max": 1.6,
         "step": 0.05,
@@ -125,7 +125,7 @@ export const SHADER_EFFECTS = [
       },
       {
         "id": "viscosity",
-        "label": "Viscosity",
+        "label": "Smoothness",
         "min": 0.2,
         "max": 2,
         "step": 0.05,
@@ -133,7 +133,7 @@ export const SHADER_EFFECTS = [
       },
       {
         "id": "vorticity",
-        "label": "Vorticity",
+        "label": "Swirl",
         "min": 0,
         "max": 2.5,
         "step": 0.05,
@@ -141,7 +141,7 @@ export const SHADER_EFFECTS = [
       },
       {
         "id": "flow_speed",
-        "label": "Flow Speed",
+        "label": "Speed",
         "min": 0.1,
         "max": 2,
         "step": 0.05,
@@ -149,7 +149,7 @@ export const SHADER_EFFECTS = [
       },
       {
         "id": "emitters",
-        "label": "Emitters",
+        "label": "Color Bursts",
         "min": 1,
         "max": 6,
         "step": 1,
@@ -257,7 +257,7 @@ export const SHADER_EFFECTS = [
       },
       {
         "id": "grid_intensity",
-        "label": "Grid Intensity",
+        "label": "Grid Brightness",
         "min": 0,
         "max": 1.5,
         "step": 0.05,
@@ -327,7 +327,7 @@ export const SHADER_EFFECTS = [
       },
       {
         "id": "scale",
-        "label": "Scale",
+        "label": "Size",
         "min": 0.55,
         "max": 2.1,
         "step": 0.05,
@@ -335,7 +335,7 @@ export const SHADER_EFFECTS = [
       },
       {
         "id": "detail",
-        "label": "Detail",
+        "label": "Star Detail",
         "min": 0.35,
         "max": 1.55,
         "step": 0.05,

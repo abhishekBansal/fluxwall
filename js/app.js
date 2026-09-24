@@ -2,14 +2,26 @@ import { DEFAULT_FEATURED_EFFECT_ID, SHADER_EFFECTS } from './shaders.js'
 
 const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel'
 const screenshotFor = (id) => `assets/screenshots/${id}.png`
-const videoFor = (id) => `assets/videos/${id}.webm`
+
+// Gallery cards use public metadata and thumbnails only. The five entries below
+// are the experimentable previews; thumbnail-only entries can be added here as
+// the Android catalog grows without exposing additional shader source.
+const GALLERY_WALLPAPERS = SHADER_EFFECTS.map((effect) => ({
+  id: effect.id,
+  name: effect.name,
+  tagline: effect.tagline,
+  category: effect.category,
+  thumbnail: screenshotFor(effect.id),
+  configurable: true
+}))
+
 const byId = (id) => SHADER_EFFECTS.find((effect) => effect.id === id) || SHADER_EFFECTS[0]
 
 const stage = document.querySelector('[data-stage-canvas]')
 const effectGrid = document.querySelector('[data-effect-grid]')
 const effectSwitchers = [...document.querySelectorAll('[data-hero-effect-switcher], [data-studio-effect-switcher]')]
 const studioPreview = document.querySelector('[data-studio-preview]')
-const studioVideo = document.querySelector('[data-studio-video]')
+const studioStage = document.querySelector('[data-studio-canvas]')
 const controls = document.querySelector('[data-controls]')
 const canvasLabel = document.querySelector('[data-canvas-label]')
 const heroCanvasWrap = document.querySelector('.hero-canvas-wrap')
@@ -17,11 +29,11 @@ const canvasCategory = document.querySelector('[data-canvas-category]')
 const studioLabel = document.querySelector('[data-studio-label]')
 const controlTitle = document.querySelector('[data-control-title]')
 const controlTagline = document.querySelector('[data-control-tagline]')
-const saveButton = document.querySelector('[data-save]')
 
 let selected = byId(DEFAULT_FEATURED_EFFECT_ID)
 let state = {}
 let renderer
+let studioRenderer
 let activeFilter = 'all'
 
 function defaults(effect) {
@@ -33,29 +45,26 @@ function categoryLabel(category) {
 }
 
 function renderCard(effect) {
-  const card = document.createElement('button')
-  card.className = `effect-card${effect.id === selected.id ? ' is-selected' : ''}`
-  card.type = 'button'
+  const card = document.createElement('article')
+  card.className = 'effect-card'
   card.dataset.effectId = effect.id
   card.dataset.category = effect.category
-  card.setAttribute('aria-label', `Preview ${effect.name}`)
+  card.setAttribute('aria-label', effect.name)
   card.innerHTML = `
     <div class="effect-image">
-      <img src="${screenshotFor(effect.id)}" alt="${effect.name} live wallpaper" loading="lazy">
+      <img src="${effect.thumbnail}" alt="${effect.name} live wallpaper" loading="lazy">
       <div class="effect-overlay"></div>
-      <span class="effect-play">▶</span>
       <div class="effect-info">
         <div class="effect-category">${categoryLabel(effect.category)}</div>
         <h3>${effect.name}</h3>
         <p>${effect.tagline}</p>
       </div>
     </div>`
-  card.addEventListener('click', () => selectEffect(effect.id))
   return card
 }
 
 function populateCards() {
-  effectGrid.replaceChildren(...SHADER_EFFECTS.filter((effect) => activeFilter === 'all' || effect.category === activeFilter).map(renderCard))
+  effectGrid.replaceChildren(...GALLERY_WALLPAPERS.filter((effect) => activeFilter === 'all' || effect.category === activeFilter).map(renderCard))
 }
 
 function renderEffectSwitcher() {
@@ -74,7 +83,6 @@ function renderEffectSwitcher() {
 }
 
 function updateCardSelection() {
-  document.querySelectorAll('.effect-card').forEach((card) => card.classList.toggle('is-selected', card.dataset.effectId === selected.id))
   effectSwitchers.forEach((switcher) => switcher.querySelectorAll('[data-effect-id]').forEach((button) => {
     const active = button.dataset.effectId === selected.id
     button.classList.toggle('is-active', active)
@@ -103,7 +111,7 @@ function createControl(parameter) {
     select.value = state[parameter.id]
     select.addEventListener('input', () => {
       state[parameter.id] = Number(select.value)
-      updateStudioPreview()
+      updatePreviewValues()
     })
     row.append(label, select)
     return row
@@ -118,7 +126,7 @@ function createControl(parameter) {
     label.prepend(input)
     input.addEventListener('change', () => {
       state[parameter.id] = input.checked
-      updateStudioPreview()
+      updatePreviewValues()
     })
     row.append(label)
     return row
@@ -140,7 +148,7 @@ function createControl(parameter) {
     state[parameter.id] = Number(input.value)
     value.textContent = formatControlValue(state[parameter.id])
     input.style.setProperty('--fill', `${((input.value - input.min) / (input.max - input.min)) * 100}%`)
-    updateStudioPreview()
+    updatePreviewValues()
   })
   row.append(label, input)
   return row
@@ -158,19 +166,22 @@ function updateControls() {
   canvasCategory.textContent = categoryLabel(selected.category)
   heroCanvasWrap.style.backgroundImage = `url("${screenshotFor(selected.id)}")`
   studioLabel.textContent = selected.name
-  studioPreview.style.backgroundImage = `url("${screenshotFor(selected.id)}")`
-  studioVideo.poster = screenshotFor(selected.id)
-  studioVideo.src = videoFor(selected.id)
-  studioVideo.load()
-  studioVideo.play().catch(() => {})
-  saveButton.classList.remove('is-saved')
-  saveButton.querySelector('span').textContent = '☆'
-  document.querySelector('[data-save-note]').textContent = 'Local to this device'
+  studioPreview.src = screenshotFor(selected.id)
+  studioStage.setAttribute('aria-label', `${selected.name} live wallpaper preview`)
 }
 
-function updateStudioPreview() {
-  if (!renderer) return
-  renderer.values = { ...state }
+function updatePreviewValues() {
+  for (const previewRenderer of [renderer, studioRenderer]) {
+    if (previewRenderer) previewRenderer.values = { ...state }
+  }
+}
+
+function updatePreviewEffect(effect) {
+  for (const previewRenderer of [renderer, studioRenderer]) {
+    if (!previewRenderer) continue
+    previewRenderer.setEffect(effect)
+    previewRenderer.values = { ...state }
+  }
 }
 
 function selectEffect(id) {
@@ -179,10 +190,7 @@ function selectEffect(id) {
   state = defaults(effect)
   updateControls()
   updateCardSelection()
-  if (renderer) {
-    renderer.setEffect(effect)
-    renderer.values = { ...state }
-  }
+  updatePreviewEffect(effect)
   document.querySelector('#studio')?.classList.add('has-selection')
 }
 
@@ -198,6 +206,7 @@ class ShaderRenderer {
     this.start = performance.now()
     this.pointer = [0, 0]
     this.drag = false
+    this.visible = false
     if (!this.gl) return
     this.positionBuffer = this.gl.createBuffer()
     this.gl.bindBuffer(this.gl.ARRAY_BUFFER, this.positionBuffer)
@@ -212,6 +221,15 @@ class ShaderRenderer {
     window.addEventListener('resize', () => this.resize())
     this.resize()
     this.setEffect(selected)
+    if ('IntersectionObserver' in window) {
+      this.visibilityObserver = new IntersectionObserver(([entry]) => {
+        this.visible = entry.isIntersecting
+        if (this.visible) this.resize()
+      }, { rootMargin: '120px' })
+      this.visibilityObserver.observe(canvas)
+    } else {
+      this.visible = true
+    }
     requestAnimationFrame(() => this.frame())
   }
 
@@ -270,16 +288,31 @@ class ShaderRenderer {
     // the selected bitmap is loading on slower connections or static previews.
     this.texture = gl.createTexture()
     gl.bindTexture(gl.TEXTURE_2D, this.texture)
-    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR)
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR)
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR)
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.REPEAT)
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.REPEAT)
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE, new Uint8Array([112, 125, 160, 255]))
+    const anisotropicFiltering = gl.getExtension('EXT_texture_filter_anisotropic')
+    if (anisotropicFiltering) {
+      const maxAnisotropy = gl.getParameter(anisotropicFiltering.MAX_TEXTURE_MAX_ANISOTROPY_EXT)
+      gl.texParameterf(gl.TEXTURE_2D, anisotropicFiltering.TEXTURE_MAX_ANISOTROPY_EXT, Math.min(4, maxAnisotropy))
+    }
     const image = new Image()
     image.onload = () => {
+      // WebGL 1 only supports mipmaps for power-of-two textures. Resampling
+      // once on the CPU lets the GPU filter the tunnel cleanly at any size.
+      const textureCanvas = document.createElement('canvas')
+      textureCanvas.width = 1024
+      textureCanvas.height = 1024
+      const context = textureCanvas.getContext('2d')
+      context.imageSmoothingEnabled = true
+      context.imageSmoothingQuality = 'high'
+      context.drawImage(image, 0, 0, textureCanvas.width, textureCanvas.height)
       gl.bindTexture(gl.TEXTURE_2D, this.texture)
       gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true)
-      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image)
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, textureCanvas)
+      gl.generateMipmap(gl.TEXTURE_2D)
     }
     image.onerror = () => console.warn(`Could not load tunnel texture: ${path}`)
     image.src = path
@@ -298,7 +331,7 @@ class ShaderRenderer {
 
   frame() {
     const gl = this.gl
-    if (gl && this.program && this.effect) {
+    if (gl && this.visible && this.program && this.effect) {
       this.resize()
       const time = (performance.now() - this.start) / 1000
       gl.useProgram(this.program)
@@ -352,15 +385,9 @@ class ShaderRenderer {
       if (this.effect.id === 'tunnel' && this.texture) {
         gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, this.texture); this.uniform('uTunnelTexture', 0)
       }
-      if (this.effect.id === 'tunnel') {
-        // The tunnel's bitmap preview is a generated still. Keep the WebGL
-        // canvas transparent so the poster remains visible on the website,
-        // while the app's live tunnel renderer remains unaffected.
-        gl.clearColor(0, 0, 0, 0)
-        gl.clear(gl.COLOR_BUFFER_BIT)
-      } else {
-        gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
-      }
+      gl.clearColor(0, 0, 0, 1)
+      gl.clear(gl.COLOR_BUFFER_BIT)
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4)
     }
     requestAnimationFrame(() => this.frame())
   }
@@ -389,17 +416,9 @@ function setupNavigation() {
   }))
 }
 
-function setupFavorites() {
-  saveButton.addEventListener('click', () => {
-    const saved = saveButton.classList.toggle('is-saved')
-    saveButton.querySelector('span').textContent = saved ? '★' : '☆'
-    document.querySelector('[data-save-note]').textContent = saved ? 'Added to your collection' : 'Local to this device'
-  })
-}
-
 function setupReveal() {
   if (!('IntersectionObserver' in window)) return
-  const items = document.querySelectorAll('.feature-card, .effect-card, .tour-main-image, .tour-side, .faq')
+  const items = document.querySelectorAll('.effect-card, .tour-shot, .faq')
   items.forEach((item) => { item.style.opacity = '0'; item.style.transform = 'translateY(12px)'; item.style.transition = 'opacity .6s ease, transform .6s ease' })
   const observer = new IntersectionObserver((entries, instance) => entries.forEach((entry) => {
     if (!entry.isIntersecting) return
@@ -415,10 +434,11 @@ updateControls()
 updateCardSelection()
 setupFilters()
 setupNavigation()
-setupFavorites()
 renderer = new ShaderRenderer(stage)
-renderer.values = { ...state }
+studioRenderer = new ShaderRenderer(studioStage)
+updatePreviewValues()
 if (stage && !renderer.gl) stage.parentElement.classList.add('no-webgl')
+if (studioStage && !studioRenderer.gl) studioStage.parentElement.classList.add('no-webgl')
 document.querySelector('[data-year]').textContent = new Date().getFullYear()
 setupReveal()
 
