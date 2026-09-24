@@ -1,0 +1,66 @@
+# FluxWall
+
+> FluxWall is a procedural live wallpaper app for Android. It renders evolving OpenGL shader worlds in realtime instead of playing a fixed video loop.
+
+## Canonical website
+
+- Website: https://fluxwall.abhishekbansal.dev/
+- Android app: https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel
+- Public source repository: https://github.com/abhishekBansal/fluxwall
+
+## What FluxWall is
+
+FluxWall is a mobile live wallpaper studio for Android. Users can explore a curated set of shader-based worlds, preview them in realtime, and customize supported visual parameters such as color, speed, glow, density, and flow. The Android app is available on Google Play.
+
+FluxWall is designed for Android devices that support live wallpapers. It does not require an account, and the app contains no ads or tracking.
+
+## Featured public worlds
+
+The public website showcases five curated shader experiences:
+
+- Infinite Tunnel: a 3D tunnel journey with luminous rings and motion.
+- Magic Fluids: abstract liquid-like color fields with flowing motion.
+- Aurora Field: flowing aurora-like color bands over a dark sky.
+- Synthwave Sun: a retro sun and grid-inspired synthwave scene.
+- Galaxy: a cosmic starfield and galaxy-inspired scene.
+
+## How it works
+
+FluxWall uses OpenGL shaders to generate wallpaper frames on the device. The motion is generated continuously, so scenes can evolve without repeating a prerecorded video. The public website includes a JavaScript preview for the featured shader experiences.
+
+## Frequently asked questions
+
+### Is FluxWall a video wallpaper?
+
+No. FluxWall renders shader-based scenes in realtime on the device. It is not a fixed video loop.
+
+### What can users customize?
+
+Each shader world can expose its own controls. Available controls may include color palettes, speed, glow, density, flow mode, and related visual parameters.
+
+### Does FluxWall need an account?
+
+No. FluxWall does not require an account. Favorites and presets are stored locally on the device according to the app's user settings.
+
+### Does FluxWall contain ads?
+
+The public website states that the app has no ads, no account, and no tracking inside the app.
+
+### Where can FluxWall be downloaded?
+
+FluxWall is available on Google Play at:
+https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel
+
+## Content and crawler policy
+
+The public website is intended to be readable by people, search engines, and user-directed AI agents. The canonical website is the source of truth for product facts and links. Crawlers should respect the site's `robots.txt`, canonical URLs, and `sitemap.xml`.
+
+The website's public shader catalog is intentionally curated. The private application repository contains the complete implementation and additional internal development material.
+
+## Page sections
+
+- Overview and direct product answer: https://fluxwall.abhishekbansal.dev/#answers
+- Featured shader gallery: https://fluxwall.abhishekbansal.dev/#gallery
+- Live customization studio: https://fluxwall.abhishekbansal.dev/#studio
+- Frequently asked questions: https://fluxwall.abhishekbansal.dev/#faq
+- Google Play download: https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel

@@ -82,6 +82,14 @@ h1 em, h2 em { color: var(--lime); font-style: normal; }
 .section-heading h2 span { color: var(--muted); }
 .intro-body { padding-bottom: 5px; }
 .intro-body > p { color: var(--muted); font-size: 17px; line-height: 1.7; margin: 0 0 28px; max-width: 430px; }
+.direct-answers { border-bottom: 1px solid var(--line); border-top: 1px solid var(--line); display: grid; gap: 8%; grid-template-columns: .8fr 1.2fr; padding-bottom: 86px; padding-top: 86px; }
+.direct-answers-intro h2 { font-size: clamp(40px, 4.5vw, 68px); font-weight: 500; letter-spacing: -.075em; line-height: .98; margin: 0 0 25px; }
+.direct-answers-intro h2 span { color: var(--muted); }
+.direct-answers-intro > p:last-child { color: var(--muted); font-size: 14px; line-height: 1.7; margin: 0; max-width: 340px; }
+.answer-grid { display: grid; gap: 0 18px; grid-template-columns: repeat(3, 1fr); }
+.answer-card { border-left: 1px solid var(--line); padding: 2px 0 0 20px; }
+.answer-card h3 { font-size: 14px; letter-spacing: -.02em; margin: 0 0 13px; }
+.answer-card p { color: var(--muted); font-size: 11px; line-height: 1.7; margin: 0; }
 .circle-arrow { align-items: center; border: 1px solid var(--line-bright); border-radius: 50%; color: var(--lime); display: flex; font-size: 20px; height: 57px; justify-content: center; transition: background .2s, color .2s; width: 57px; }
 .circle-arrow:hover { background: var(--lime); color: var(--bg); }
 .feature-strip { display: grid; gap: 18px; grid-template-columns: 1.25fr .875fr .875fr; padding-bottom: 180px; }
@@ -233,6 +241,11 @@ details p { color: var(--muted); font-size: 12px; line-height: 1.7; margin: -3px
   .intro { display: block; padding-bottom: 100px; padding-top: 115px; }
   .intro-body { margin-top: 35px; }
   .intro-body > p { font-size: 15px; }
+  .direct-answers { display: block; padding-bottom: 72px; padding-top: 72px; }
+  .direct-answers-intro > p:last-child { font-size: 13px; }
+  .answer-grid { display: block; margin-top: 42px; }
+  .answer-card { border-left: 0; border-top: 1px solid var(--line); padding: 20px 0 0; }
+  .answer-card + .answer-card { margin-top: 25px; }
   .feature-strip { display: block; padding-bottom: 110px; }
   .feature-card { margin-bottom: 15px; }
   .feature-card-large .feature-card-image, .feature-card-image { height: 370px; }
