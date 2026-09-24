@@ -1,19 +1,36 @@
 import { DEFAULT_FEATURED_EFFECT_ID, SHADER_EFFECTS } from './shaders.js'
 
 const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel'
-const screenshotFor = (id) => `assets/screenshots/${id}.png`
+const thumbnailFor = (id) => `assets/wallpapers/${id}.webp`
 
-// Gallery cards use public metadata and thumbnails only. The five entries below
-// are the experimentable previews; thumbnail-only entries can be added here as
-// the Android catalog grows without exposing additional shader source.
-const GALLERY_WALLPAPERS = SHADER_EFFECTS.map((effect) => ({
-  id: effect.id,
-  name: effect.name,
-  tagline: effect.tagline,
-  category: effect.category,
-  thumbnail: screenshotFor(effect.id),
-  configurable: true
-}))
+// The gallery is a complete thumbnail catalog from the Android app. Only the
+// five entries in SHADER_EFFECTS are experimentable on this site; the rest are
+// intentionally thumbnail-only so their shader source stays private.
+const GALLERY_WALLPAPERS = [
+  ...SHADER_EFFECTS.map((effect) => ({
+    id: effect.id,
+    name: effect.name,
+    tagline: effect.tagline,
+    category: effect.category,
+    thumbnail: thumbnailFor(effect.id),
+    configurable: true
+  })),
+  { id: 'plasma', name: 'Plasma', tagline: 'Bright energy in motion', category: 'abstract' },
+  { id: 'ink_in_water', name: 'Ink in Water', tagline: 'Soft color unfolding', category: 'fluids' },
+  { id: 'fractals', name: 'Fractals', tagline: 'A new pattern every moment', category: 'abstract' },
+  { id: 'liquid_metals', name: 'Liquid Metals', tagline: 'Glossy movement and shine', category: 'abstract' },
+  { id: 'rain', name: 'Rain', tagline: 'A calmer kind of motion', category: 'abstract' },
+  { id: 'fireflies', name: 'Fireflies', tagline: 'Tiny lights with a gentle glow', category: 'cosmic' },
+  { id: 'pulse_lines', name: 'Pulse Lines', tagline: 'Color that moves to the beat', category: 'abstract' },
+  { id: 'lava_lamp', name: 'Lava Lamp', tagline: 'Slow, colorful movement', category: 'fluids' },
+  { id: 'perlin_noise', name: 'Perlin Noise', tagline: 'Organic patterns in motion', category: 'abstract' },
+  { id: 'matrix_rain', name: 'Matrix Rain', tagline: 'A digital downpour', category: 'abstract' },
+  { id: 'hexagonal_grids', name: 'Hexagonal Grids', tagline: 'A sharper kind of rhythm', category: 'abstract' },
+  { id: 'wireframe_mountains', name: 'Wireframe Mountains', tagline: 'A world made of lines', category: 'abstract' },
+  { id: 'endless_stars', name: 'Endless Stars', tagline: 'A quiet field of light', category: 'cosmic' },
+  { id: 'blooming_flowers', name: 'Blooming Flowers', tagline: 'Color opening in motion', category: 'cosmic' },
+  { id: 'celestial_tide', name: 'Celestial Tide', tagline: 'A pull of light and shadow', category: 'cosmic' }
+].map((effect) => ({ ...effect, thumbnail: thumbnailFor(effect.id), configurable: effect.configurable === true }))
 
 const byId = (id) => SHADER_EFFECTS.find((effect) => effect.id === id) || SHADER_EFFECTS[0]
 
@@ -164,9 +181,9 @@ function updateControls() {
   controlTagline.textContent = selected.tagline
   canvasLabel.textContent = selected.name
   canvasCategory.textContent = categoryLabel(selected.category)
-  heroCanvasWrap.style.backgroundImage = `url("${screenshotFor(selected.id)}")`
+  heroCanvasWrap.style.backgroundImage = `url("${thumbnailFor(selected.id)}")`
   studioLabel.textContent = selected.name
-  studioPreview.src = screenshotFor(selected.id)
+  studioPreview.src = thumbnailFor(selected.id)
   studioStage.setAttribute('aria-label', `${selected.name} live wallpaper preview`)
 }
 
