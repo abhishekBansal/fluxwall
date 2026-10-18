@@ -1,6 +1,6 @@
 # FluxWall website
 
-This repository contains the public FluxWall marketing site for [fluxwall.abhishekbansal.dev](https://fluxwall.abhishekbansal.dev).
+This repository contains the public FluxWall marketing site for [fluxwall.anvik.studio](https://fluxwall.anvik.studio).
 
 The public site showcases a curated selection of live wallpapers. The complete app and its visual engine remain in the private application repository.
 

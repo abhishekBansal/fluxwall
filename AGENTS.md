@@ -2,7 +2,7 @@
 
 ## Project overview
 
-This repository is the public FluxWall marketing site for `fluxwall.abhishekbansal.dev`. It is a static GitHub Pages site with no build step or package manager.
+This repository is the public FluxWall marketing site for `fluxwall.anvik.studio`. It is a static GitHub Pages site with no build step or package manager.
 
 - `index.html` contains the page structure, metadata, CTA copy, and static fallback content.
 - `css/site.css` contains the complete responsive design system and layout.
