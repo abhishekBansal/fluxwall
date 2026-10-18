@@ -4,7 +4,7 @@
 
 ## Canonical website
 
-- Website: https://fluxwall.abhishekbansal.dev/
+- Website: https://fluxwall.anvik.studio/
 - Android app: https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel
 - Public source repository: https://github.com/abhishekBansal/fluxwall
 
@@ -59,8 +59,8 @@ The website's public catalog is intentionally curated. The private application r
 
 ## Page sections
 
-- Overview and direct product answer: https://fluxwall.abhishekbansal.dev/#answers
-- Featured world gallery: https://fluxwall.abhishekbansal.dev/#gallery
-- Customization studio: https://fluxwall.abhishekbansal.dev/#studio
-- Frequently asked questions: https://fluxwall.abhishekbansal.dev/#faq
+- Overview and direct product answer: https://fluxwall.anvik.studio/#answers
+- Featured world gallery: https://fluxwall.anvik.studio/#gallery
+- Customization studio: https://fluxwall.anvik.studio/#studio
+- Frequently asked questions: https://fluxwall.anvik.studio/#faq
 - Google Play download: https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel

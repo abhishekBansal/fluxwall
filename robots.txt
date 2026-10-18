@@ -36,4 +36,4 @@ Disallow: /
 User-agent: Google-Extended
 Disallow: /
 
-Sitemap: https://fluxwall.abhishekbansal.dev/sitemap.xml
+Sitemap: https://fluxwall.anvik.studio/sitemap.xml
