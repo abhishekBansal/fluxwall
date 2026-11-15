@@ -24,6 +24,14 @@ The public website showcases five curated experiences:
 - Synthwave Sun: a bright retro sunset with a neon horizon.
 - Galaxy: deep space with slow-moving stars.
 
+## Full wallpaper collection
+
+The Android app includes 29 live wallpapers. The website shows a thumbnail for each one:
+
+Infinite Tunnel, Magic Fluids, Event Horizon, Ripple, Nebula Voyage, Fractals, Aurora Field, Ink in Water, Plasma, Grand Spiral, Synthwave Sun, Downpour, Rain on Glass, Lava Lamp, Fireplace, Jellyfish Drift, Celestial Tide, Liquid Metals, Crystal Cluster, Silver Blade, Matrix Rain, Wireframe Mountains, Endless Stars, Fireflies, Pulse Lines, Hexagonal Grids, Perlin Noise, Blooming Flowers and Galaxy.
+
+Some wallpapers respond to touch or tilt. For example, Ripple turns the screen into water you can tap, and Event Horizon reacts when you hold your finger on it.
+
 ## How it works
 
 FluxWall creates the movement on your phone, so scenes can feel different every time you look at them. The public website includes a preview of the featured experiences.

@@ -122,6 +122,7 @@ h1 em, h2 em { color: var(--lime); font-style: normal; }
 .effect-info h3 { font-size: 14px; letter-spacing: -.03em; margin: 0 0 5px; }
 .effect-info p { color: rgba(238,241,255,.72); font-size: 11px; line-height: 1.4; margin: 0; }
 .effect-category { color: var(--lime); font-family: var(--mono); font-size: 8px; letter-spacing: .12em; margin-bottom: 8px; text-transform: uppercase; }
+.effect-new { background: var(--lime); border-radius: 99px; color: #1b210a; font-weight: 500; margin-left: 8px; padding: 2px 7px; }
 .gallery-footer { align-items: center; color: var(--muted); display: flex; font-family: var(--mono); font-size: 9px; justify-content: space-between; letter-spacing: .08em; padding-top: 28px; text-transform: uppercase; }
 .gallery-footer span { align-items: center; display: flex; gap: 9px; }
 .gallery-footer .text-link { font-family: var(--sans); letter-spacing: 0; text-transform: none; }

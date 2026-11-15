@@ -3,34 +3,61 @@ import { DEFAULT_FEATURED_EFFECT_ID, SHADER_EFFECTS } from './shaders.js'
 const PLAY_URL = 'https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel'
 const thumbnailFor = (id) => `assets/wallpapers/${id}.webp`
 
-// The gallery is a complete thumbnail catalog from the Android app. Only the
-// five entries in SHADER_EFFECTS are experimentable on this site; the rest are
-// intentionally thumbnail-only so their shader source stays private.
-const GALLERY_WALLPAPERS = [
-  ...SHADER_EFFECTS.map((effect) => ({
-    id: effect.id,
-    name: effect.name,
-    tagline: effect.tagline,
-    category: effect.category,
-    thumbnail: thumbnailFor(effect.id),
-    configurable: true
-  })),
-  { id: 'plasma', name: 'Plasma', tagline: 'Bright energy in motion', category: 'abstract' },
-  { id: 'ink_in_water', name: 'Ink in Water', tagline: 'Soft color unfolding', category: 'fluids' },
+// The gallery is a complete thumbnail catalog from the Android app, listed in
+// the app's own gallery order (most dynamic first). Only the five entries in
+// SHADER_EFFECTS are experimentable on this site; every other wallpaper is
+// thumbnail-only so its shader source stays private. Configurable entries are
+// referenced by id here and take their name, tagline and category from
+// SHADER_EFFECTS so the two never drift apart.
+const NEW_WALLPAPER_IDS = new Set([
+  'event_horizon', 'ripple', 'nebula_voyage', 'grand_spiral_galaxy', 'downpour',
+  'fireplace', 'jellyfish_drift', 'crystal_cluster', 'edge_on_galaxy'
+])
+
+const GALLERY_ORDER = [
+  { id: 'tunnel' },
+  { id: 'fluid_dynamics' },
+  { id: 'event_horizon', name: 'Event Horizon', tagline: 'Light bending around a black hole', category: 'cosmic' },
+  { id: 'ripple', name: 'Ripple', tagline: 'Touch your screen like water', category: 'nature' },
+  { id: 'nebula_voyage', name: 'Nebula Voyage', tagline: 'Fly through glowing clouds of gas', category: 'cosmic' },
   { id: 'fractals', name: 'Fractals', tagline: 'A new pattern every moment', category: 'abstract' },
-  { id: 'liquid_metals', name: 'Liquid Metals', tagline: 'Glossy movement and shine', category: 'abstract' },
-  { id: 'rain', name: 'Rain', tagline: 'A calmer kind of motion', category: 'abstract' },
-  { id: 'fireflies', name: 'Fireflies', tagline: 'Tiny lights with a gentle glow', category: 'cosmic' },
-  { id: 'pulse_lines', name: 'Pulse Lines', tagline: 'Color that moves to the beat', category: 'abstract' },
+  { id: 'aurora_field' },
+  { id: 'ink_in_water', name: 'Ink in Water', tagline: 'Soft color unfolding', category: 'fluids' },
+  { id: 'plasma', name: 'Plasma', tagline: 'Bright energy in motion', category: 'abstract' },
+  { id: 'grand_spiral_galaxy', name: 'Grand Spiral', tagline: 'A spiral galaxy turning overhead', category: 'cosmic' },
+  { id: 'synthwave_sun' },
+  { id: 'downpour', name: 'Downpour', tagline: 'Rain sweeping over city lights', category: 'nature' },
+  { id: 'rain', name: 'Rain on Glass', tagline: 'Drops sliding down a misty window', category: 'nature' },
   { id: 'lava_lamp', name: 'Lava Lamp', tagline: 'Slow, colorful movement', category: 'fluids' },
-  { id: 'perlin_noise', name: 'Perlin Noise', tagline: 'Organic patterns in motion', category: 'abstract' },
+  { id: 'fireplace', name: 'Fireplace', tagline: 'A warm fire that never burns out', category: 'nature' },
+  { id: 'jellyfish_drift', name: 'Jellyfish Drift', tagline: 'Glowing jellyfish in the deep', category: 'nature' },
+  { id: 'celestial_tide', name: 'Celestial Tide', tagline: 'A pull of light and shadow', category: 'cosmic' },
+  { id: 'liquid_metals', name: 'Liquid Metals', tagline: 'Glossy movement and shine', category: 'fluids' },
+  { id: 'crystal_cluster', name: 'Crystal Cluster', tagline: 'Faceted quartz that catches the light', category: 'abstract' },
+  { id: 'edge_on_galaxy', name: 'Silver Blade', tagline: 'A galaxy seen edge-on', category: 'cosmic' },
   { id: 'matrix_rain', name: 'Matrix Rain', tagline: 'A digital downpour', category: 'abstract' },
-  { id: 'hexagonal_grids', name: 'Hexagonal Grids', tagline: 'A sharper kind of rhythm', category: 'abstract' },
-  { id: 'wireframe_mountains', name: 'Wireframe Mountains', tagline: 'A world made of lines', category: 'abstract' },
+  { id: 'wireframe_mountains', name: 'Wireframe Mountains', tagline: 'A world made of lines', category: 'synthwave' },
   { id: 'endless_stars', name: 'Endless Stars', tagline: 'A quiet field of light', category: 'cosmic' },
-  { id: 'blooming_flowers', name: 'Blooming Flowers', tagline: 'Color opening in motion', category: 'cosmic' },
-  { id: 'celestial_tide', name: 'Celestial Tide', tagline: 'A pull of light and shadow', category: 'cosmic' }
-].map((effect) => ({ ...effect, thumbnail: thumbnailFor(effect.id), configurable: effect.configurable === true }))
+  { id: 'fireflies', name: 'Fireflies', tagline: 'Tiny lights with a gentle glow', category: 'nature' },
+  { id: 'pulse_lines', name: 'Pulse Lines', tagline: 'Color that moves to the beat', category: 'abstract' },
+  { id: 'hexagonal_grids', name: 'Hexagonal Grids', tagline: 'A sharper kind of rhythm', category: 'abstract' },
+  { id: 'perlin_noise', name: 'Perlin Noise', tagline: 'Organic patterns in motion', category: 'abstract' },
+  { id: 'blooming_flowers', name: 'Blooming Flowers', tagline: 'Color opening in motion', category: 'nature' },
+  { id: 'galaxy' }
+]
+
+const GALLERY_WALLPAPERS = GALLERY_ORDER.map((entry) => {
+  const shader = SHADER_EFFECTS.find((effect) => effect.id === entry.id)
+  const source = shader
+    ? { id: shader.id, name: shader.name, tagline: shader.tagline, category: shader.category }
+    : entry
+  return {
+    ...source,
+    thumbnail: thumbnailFor(entry.id),
+    configurable: Boolean(shader),
+    isNew: NEW_WALLPAPER_IDS.has(entry.id)
+  }
+})
 
 const byId = (id) => SHADER_EFFECTS.find((effect) => effect.id === id) || SHADER_EFFECTS[0]
 
@@ -72,7 +99,7 @@ function renderCard(effect) {
       <img src="${effect.thumbnail}" alt="${effect.name} live wallpaper" loading="lazy">
       <div class="effect-overlay"></div>
       <div class="effect-info">
-        <div class="effect-category">${categoryLabel(effect.category)}</div>
+        <div class="effect-category">${categoryLabel(effect.category)}${effect.isNew ? '<span class="effect-new">New</span>' : ''}</div>
         <h3>${effect.name}</h3>
         <p>${effect.tagline}</p>
       </div>
