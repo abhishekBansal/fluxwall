@@ -12,7 +12,7 @@
 
 FluxWall is a free live wallpaper app for Android. Users can explore a curated collection of moving backgrounds, preview them, and personalize settings such as color, speed, glow, and movement. The Android app is available on Google Play.
 
-FluxWall is designed for Android devices that support live wallpapers. It does not require an account, and the app contains no ads or tracking.
+FluxWall is designed for Android devices that support live wallpapers. It does not require an account or an internet connection, and the app currently shows no intrusive ads. It collects only limited usage and crash data (Google Firebase) to stay stable and improve; see the privacy policy.
 
 ## Featured worlds
 
@@ -52,7 +52,7 @@ No. FluxWall does not require an account. Favorites and presets are stored local
 
 ### Does FluxWall contain ads?
 
-No ads, no account, and no tracking inside the app.
+No account needed and no intrusive ads. Only limited usage and crash data is collected; see https://fluxwall.anvik.studio/privacy_policy.html.
 
 ### Where can FluxWall be downloaded?
 
