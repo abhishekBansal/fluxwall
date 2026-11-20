@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080a12">
+  <meta name="author" content="FluxWall">
+  <meta name="description" content="How FluxWall live wallpapers are built to be gentle on your battery: drawing stops when the wallpaper is hidden, animation is capped, and there are no wake locks.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="FluxWall">
+  <meta property="og:title" content="Battery-Aware Live Wallpaper for Android — FluxWall">
+  <meta property="og:description" content="A live wallpaper for Android that stops drawing when it is not on screen. Free on Google Play.">
+  <meta property="og:image" content="https://fluxwall.anvik.studio/assets/images/feature.jpg">
+  <meta property="og:url" content="https://fluxwall.anvik.studio/live-wallpaper-battery.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://fluxwall.anvik.studio/live-wallpaper-battery.html">
+  <title>Battery-Aware Live Wallpaper for Android — FluxWall</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://fluxwall.anvik.studio/live-wallpaper-battery.html#webpage",
+        "url": "https://fluxwall.anvik.studio/live-wallpaper-battery.html",
+        "name": "Battery-Aware Live Wallpaper for Android — FluxWall",
+        "description": "How FluxWall live wallpapers are built to be gentle on your battery: drawing stops when the wallpaper is hidden, animation is capped, and there are no wake locks.",
+        "inLanguage": "en-US",
+        "isPartOf": {
+          "@id": "https://fluxwall.anvik.studio/#website"
+        },
+        "about": {
+          "@id": "https://fluxwall.anvik.studio/#app"
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" href="assets/images/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header" data-header>
+    <a class="brand" href="/" aria-label="FluxWall home">
+      <img class="brand-icon" src="assets/images/fluxwall-icon.png" alt="" />
+      <span>Flux<span class="brand-muted">Wall</span></span>
+    </a>
+    <nav class="nav" data-nav>
+      <a href="/#gallery">Gallery</a>
+      <a href="/#studio">Studio</a>
+      <a href="/#faq">FAQ</a>
+      <a class="nav-download" href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer">Get FluxWall Free <img class="google-play-icon" src="assets/images/google-play-icon.png" alt="" /></a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle><i></i><i></i></button>
+  </header>
+
+  <main class="section-shell content-page">
+    <article>
+      <p class="eyebrow"><span class="eyebrow-dot"></span> Battery-aware live wallpaper</p>
+      <h1>Live wallpaper that doesn&#x27;t drain your battery</h1>
+      <p class="lede">A moving wallpaper should not cost you more than it has to. Every FluxWall wallpaper is fully customizable and can be uniquely yours, and it is built to work gently with your phone. Here is exactly what FluxWall does to avoid wasting power.</p>
+      <section>
+        <h2>It stops when you can't see it</h2>
+        <p>FluxWall pauses its rendering whenever the wallpaper is not visible, for example when you open an app or when the screen is off. When you come back to your home screen, it resumes.</p>
+      </section>
+      <section>
+        <h2>What FluxWall does</h2>
+        <ul>
+          <li>Animation is capped at about 30 frames per second by default. Many wallpapers let you choose a different cap.</li>
+          <li>The tilt sensor runs only while the wallpaper is visible, and only for wallpapers that use tilt.</li>
+          <li>Many wallpapers include a battery saver option that lowers the frame rate and reduces fine detail.</li>
+          <li>FluxWall does not hold wake locks and does not schedule background jobs or alarms to keep itself running.</li>
+        </ul>
+        <!-- TODO: battery screenshot -->
+      </section>
+      <section>
+        <h2>Still drawn live</h2>
+        <p>These choices do not turn FluxWall into a static image. The scene is still <a href="interactive-live-wallpaper-android.html">rendered live on the GPU</a>, not played back as a video, so it keeps responding to you while it is on screen.</p>
+      </section>
+      <section>
+        <h2>A note on honesty</h2>
+        <p>Any live wallpaper uses some power while it is moving, and results depend on your phone, your screen and the wallpaper you pick. You can check how much each app uses in your phone's battery settings. If you want to reduce use further, lower the frame rate or choose a calmer wallpaper.</p>
+      </section>
+      <section>
+        <h2>Free, with no ads</h2>
+        <p>FluxWall is free to download with no ads and no account needed. See <a href="free-live-wallpaper-no-ads.html">the free live wallpaper app, no ads</a> page for more.</p>
+      </section>
+      <div class="content-cta">
+        <a class="button button-primary button-hero" href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer"><img class="google-play-icon" src="assets/images/google-play-icon.png" alt="" /> Get FluxWall Free</a>
+        <p class="content-note">FluxWall by Anvik Studio on Google Play (package com.rrapps.infinitetunnel).</p>
+      </div>
+      <nav class="content-related" aria-label="Related pages">
+        <a href="/">FluxWall home</a>
+        <a href="interactive-live-wallpaper-android.html">Interactive live wallpaper for Android</a>
+        <a href="free-live-wallpaper-no-ads.html">Free live wallpaper app, no ads</a>
+      </nav>
+    </article>
+  </main>
+
+  <footer class="footer section-shell"><div class="footer-top"><a class="brand" href="/"><img class="brand-icon" src="assets/images/fluxwall-icon.png" alt="" /><span>Flux<span class="brand-muted">Wall</span></span></a><div class="footer-links"><a href="/#gallery">Gallery</a><a href="/#studio">Studio</a><a href="/#faq">FAQ</a><a href="privacy_policy.html">Privacy Policy</a><a href="https://fluxwall.anvik.studio/llms.txt">AI-readable site guide</a><a href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer">Google Play ↗</a></div></div><div class="footer-bottom"><span>© <span data-year></span> <a href="https://anvik.studio" target="_blank" rel="noreferrer">Anvik Studio</a></span><span>Made for your screen</span><a href="mailto:support@anvik.studio">Say hello ↗</a></div></footer>
+  <div class="sticky-download"><span>Make your screen yours.</span><a href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer"><img class="google-play-icon" src="assets/images/google-play-icon.png" alt="" /> Get FluxWall Free</a></div>
+  <script>
+    (function () {
+      var header = document.querySelector('[data-header]'), nav = document.querySelector('[data-nav]'), menu = document.querySelector('[data-menu-toggle]');
+      window.addEventListener('scroll', function () { header.classList.toggle('is-scrolled', window.scrollY > 30); }, { passive: true });
+      menu.addEventListener('click', function () {
+        var open = nav.classList.toggle('is-open');
+        menu.setAttribute('aria-expanded', String(open));
+        document.body.classList.toggle('menu-open', open);
+      });
+      var year = document.querySelector('[data-year]'); if (year) year.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>

@@ -72,3 +72,9 @@ The website's public catalog is intentionally curated. The private application r
 - Customization studio: https://fluxwall.anvik.studio/#studio
 - Frequently asked questions: https://fluxwall.anvik.studio/#faq
 - Google Play download: https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel
+
+## Guides
+
+- Interactive live wallpaper for Android: https://fluxwall.anvik.studio/interactive-live-wallpaper-android.html
+- Live wallpaper that doesn't drain your battery: https://fluxwall.anvik.studio/live-wallpaper-battery.html
+- Free live wallpaper app, no ads: https://fluxwall.anvik.studio/free-live-wallpaper-no-ads.html

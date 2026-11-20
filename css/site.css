@@ -276,3 +276,20 @@ details p { color: var(--muted); font-size: 14px; line-height: 1.7; margin: -3px
   .sticky-download .google-play-icon { width: 14px; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+
+/* Content pages (search landing pages) */
+.content-page { max-width: 780px; padding-bottom: 100px; padding-top: 140px; }
+.content-page h1 { font-size: clamp(34px, 5vw, 56px); font-weight: 500; letter-spacing: -.06em; line-height: 1.05; margin: 0 0 24px; }
+.content-page h2 { color: var(--ink); font-size: 22px; font-weight: 600; letter-spacing: -.03em; margin: 40px 0 14px; }
+.content-page p, .content-page li { color: var(--muted); font-size: 15px; line-height: 1.75; }
+.content-page p { margin: 0 0 14px; }
+.content-page ul { margin: 0 0 14px; padding-left: 20px; }
+.content-page li { margin-bottom: 8px; }
+.content-page .lede { color: var(--ink); font-size: 18px; line-height: 1.65; }
+.content-page a:not(.button) { color: var(--lime); }
+.content-page strong { color: var(--ink); font-weight: 600; }
+.content-cta { align-items: center; display: flex; flex-wrap: wrap; gap: 14px 22px; margin: 48px 0 0; }
+.content-cta .content-note { font-size: 12px; margin: 0; }
+.content-related { border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 48px; padding-top: 24px; }
+.content-related a { font-size: 13px; }
+@media (max-width: 760px) { .content-page { padding-top: 110px; padding-bottom: 120px; } }
