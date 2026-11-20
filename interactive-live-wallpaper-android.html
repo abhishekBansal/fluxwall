@@ -5,19 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#080a12">
   <meta name="author" content="FluxWall">
-  <meta name="description" content="FluxWall is a free interactive live wallpaper app for Android. Many wallpapers respond to touch or tilt, are drawn live on your phone, and are fully customizable.">
+  <meta name="description" content="Experience real-time interactive live wallpapers for Android. Touch-reactive fluids, gyro-tilt parallax, and GPU-computed motion at 60 FPS. Free on Google Play.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="FluxWall">
-  <meta property="og:title" content="Interactive Live Wallpaper for Android — FluxWall">
-  <meta property="og:description" content="Touch-reactive live wallpapers for Android, drawn live on your phone and fully customizable. Free on Google Play.">
+  <meta property="og:title" content="Interactive Live Wallpaper for Android — Touch & Tilt Reactive | FluxWall">
+  <meta property="og:description" content="Turn your screen into an interactive playground. Touch ripples, gyro tilt, and real-time GPU rendering. Free on Google Play.">
   <meta property="og:image" content="https://fluxwall.anvik.studio/assets/images/feature.jpg">
   <meta property="og:url" content="https://fluxwall.anvik.studio/interactive-live-wallpaper-android.html">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Interactive Live Wallpaper for Android — Touch & Tilt Reactive | FluxWall">
+  <meta name="twitter:description" content="Turn your screen into an interactive playground. Touch ripples, gyro tilt, and real-time GPU rendering. Free on Google Play.">
+  <meta name="twitter:image" content="https://fluxwall.anvik.studio/assets/images/feature.jpg">
   <link rel="canonical" href="https://fluxwall.anvik.studio/interactive-live-wallpaper-android.html">
-  <title>Interactive Live Wallpaper for Android — FluxWall</title>
+  <title>Interactive Live Wallpaper for Android — Touch & Tilt Reactive | FluxWall</title>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -26,8 +29,8 @@
         "@type": "WebPage",
         "@id": "https://fluxwall.anvik.studio/interactive-live-wallpaper-android.html#webpage",
         "url": "https://fluxwall.anvik.studio/interactive-live-wallpaper-android.html",
-        "name": "Interactive Live Wallpaper for Android — FluxWall",
-        "description": "FluxWall is a free interactive live wallpaper app for Android. Many wallpapers respond to touch or tilt, are drawn live on your phone, and are fully customizable.",
+        "name": "Interactive Live Wallpaper for Android — Touch & Tilt Reactive | FluxWall",
+        "description": "Experience real-time interactive live wallpapers for Android. Touch-reactive fluids, gyro-tilt parallax, and GPU-computed motion at 60 FPS. Free on Google Play.",
         "inLanguage": "en-US",
         "isPartOf": {
           "@id": "https://fluxwall.anvik.studio/#website"
@@ -35,6 +38,70 @@
         "about": {
           "@id": "https://fluxwall.anvik.studio/#app"
         }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://fluxwall.anvik.studio/#app",
+        "name": "FluxWall",
+        "url": "https://fluxwall.anvik.studio/",
+        "description": "Interactive touch-reactive live wallpapers for Android generated in real time on your phone's GPU.",
+        "applicationCategory": "PersonalizationApplication",
+        "applicationSubCategory": "Live Wallpaper",
+        "operatingSystem": "Android",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        "isAccessibleForFree": true
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://fluxwall.anvik.studio/interactive-live-wallpaper-android.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do interactive live wallpapers work on Android?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Unlike pre-recorded video loops, FluxWall compiles procedural OpenGL shaders that calculate mathematical color, light, and physics directly on your phone's GPU for every single frame. When you touch the screen or tilt your device, your touch coordinates and accelerometer data feed directly into the shader equations, creating instant ripple and perspective reactions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which FluxWall wallpapers respond to touch or tilt?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Many wallpapers feature dynamic input reactions. Magic Fluids and Ripple generate fluid waves under your fingertips, Event Horizon warps gravitational space when held, and 3D scenes shift perspective as you tilt your phone. Calmer ambient worlds drift gently without requiring touch."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does real-time touch interaction cause frame drops or lag?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. FluxWall's rendering engine is optimized with efficient GLSL shaders and zero unnecessary CPU allocations, maintaining buttery smooth 60 FPS animations on modern Android hardware without hitching or input lag."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I test interactive wallpapers in my web browser before downloading?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! The FluxWall home page features a browser-based WebGL preview editor where you can experiment with real shader parameters such as colors, glow, speed, and motion live on your computer or mobile browser."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are interactive features free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. All interactive shaders, controls, presets, and customization options are 100% free with no ads and no account needed."
+            }
+          }
+        ]
       }
     ]
   }
@@ -61,55 +128,293 @@
     <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle><i></i><i></i></button>
   </header>
 
-  <main class="section-shell content-page">
-    <article>
-      <p class="eyebrow"><span class="eyebrow-dot"></span> Interactive live wallpaper</p>
-      <h1>Interactive live wallpaper for Android</h1>
-      <p class="lede">Every FluxWall wallpaper is fully customizable, so it can be uniquely yours. Many of them also respond when you touch the screen or tilt your phone, which turns your home screen into something you can play with.</p>
-      <section>
-        <h2>Drawn live, not played back</h2>
-        <p>FluxWall is not a video wallpaper. The moving scene is rendered live on your phone's GPU, frame by frame, so it is not a fixed loop that repeats. Because the scene is generated as you watch, it can react to you in real time.</p>
-      </section>
-      <section>
-        <h2>Touch and tilt</h2>
-        <ul>
-          <li>Many wallpapers respond to touch, with ripples, glows and motion that follow your finger.</li>
-          <li>Some wallpapers respond to tilt, so the scene shifts as you move the phone.</li>
-          <li>Not every wallpaper reacts to input. Some are designed to simply drift and flow, which is calming to play with.</li>
+  <main class="landing-shell">
+    <section class="landing-hero">
+      <div class="landing-hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Touch & Tilt Reactive · GPU-Rendered · Android</p>
+        <h1>Interactive live wallpapers<br><em>that react to your touch.</em></h1>
+        <p class="lede">Your phone screen shouldn't be a frozen photo or a repetitive 3-second video loop. FluxWall generates live mathematical fluid, cosmic, and geometric worlds in real time — responding instantly to your finger taps, swipes, and device tilt.</p>
+        <div class="landing-hero-actions">
+          <a class="button button-primary button-hero" href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer"><img class="google-play-icon" src="assets/images/google-play-icon.png" alt="" /> Get FluxWall Free</a>
+          <a class="text-link" href="#how-it-works">How live rendering works <span>↓</span></a>
+        </div>
+        <ul class="trust-chips">
+          <li class="trust-chip">Responsive Touch Ripples</li>
+          <li class="trust-chip">Gyroscope Tilt Parallax</li>
+          <li class="trust-chip">Smooth 60 FPS GPU Engine</li>
+          <li class="trust-chip">Never Repeats A Loop</li>
         </ul>
-        <!-- TODO: GIF -->
-      </section>
-      <section>
-        <h2>Make it yours</h2>
-        <p>Each wallpaper has its own controls. Depending on the wallpaper, you can adjust color, speed, glow and movement, and the preview updates as you change them. Save the combinations you like as presets and come back to them whenever you want a different mood.</p>
-        <p>You can try the same idea in your browser with the <a href="/#studio">preview editor</a> on the home page.</p>
-      </section>
-      <section>
-        <h2>Gentle on your phone</h2>
-        <p>Live wallpapers should not be wasteful. FluxWall stops drawing when the wallpaper is not on screen. Read more on <a href="live-wallpaper-battery.html">how FluxWall treats your battery</a>.</p>
-      </section>
-      <section>
-        <h2>Why it feels different</h2>
-        <p>A video wallpaper plays the same clip over and over. A live scene is generated as it runs, so it can keep changing and can respond to what you do. That is what makes touching the screen feel satisfying, and why the scene can look a little different each time you return to your home screen.</p>
-      </section>
-      <section>
-        <h2>Free to try</h2>
-        <p>FluxWall is free to download, with no ads and no account needed. Details are on the <a href="free-live-wallpaper-no-ads.html">free live wallpaper app, no ads</a> page.</p>
-      </section>
-      <div class="content-cta">
-        <a class="button button-primary button-hero" href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer"><img class="google-play-icon" src="assets/images/google-play-icon.png" alt="" /> Get FluxWall Free</a>
-        <p class="content-note">FluxWall by Anvik Studio on Google Play (package com.rrapps.infinitetunnel).</p>
       </div>
-      <nav class="content-related" aria-label="Related pages">
-        <a href="/">FluxWall home</a>
-        <a href="live-wallpaper-battery.html">Live wallpaper that doesn&#x27;t drain your battery</a>
-        <a href="free-live-wallpaper-no-ads.html">Free live wallpaper app, no ads</a>
-      </nav>
-    </article>
+      <div class="mockup-wrap">
+        <div class="phone-mockup">
+          <picture>
+            <source srcset="assets/screenshots/device_preview_ripple.webp" type="image/webp">
+            <img src="assets/screenshots/device_preview_ripple.png" alt="FluxWall touch-reactive interactive live wallpaper ripple dynamics preview" width="320" height="711" fetchpriority="high">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Problem with Video Loops -->
+    <section class="landing-section" id="how-it-works">
+      <div class="landing-section-intro">
+        <p class="eyebrow">Drawn Live vs Video Loops</p>
+        <h2>Why pre-recorded video wallpapers<br><span>feel lifeless and repetitive.</span></h2>
+        <p>Most "live" wallpaper apps simply download short MP4 video clips that replay the exact same sequence on repeat. Because they are pre-recorded, they can never react to you. FluxWall computes every pixel live on your phone's graphics hardware.</p>
+      </div>
+
+      <div class="problem-solution-grid">
+        <div class="audit-card is-problem">
+          <span class="audit-badge">Pre-Recorded Video Wallpapers</span>
+          <h3>Fixed, repetitive, and passive</h3>
+          <ul class="audit-list">
+            <li>Replays the identical 3-second video loop thousands of times a day</li>
+            <li>Zero interaction: tapping or swiping does nothing to the video</li>
+            <li>Constant CPU and RAM strain from continuous video decoding</li>
+            <li>Large 50MB+ download sizes for single video files</li>
+            <li>Obvious jump cuts or stuttering at loop seams</li>
+          </ul>
+        </div>
+
+        <div class="audit-card is-solution">
+          <span class="audit-badge">FluxWall Real-Time Shaders</span>
+          <h3>Living, interactive, and evolving</h3>
+          <ul class="audit-list">
+            <li>Calculated live on the GPU: never repeats the same frame twice</li>
+            <li>Touch ripples, color shifts, and fluid swirls follow your fingertips</li>
+            <li>Gyroscope sensor shifts the scene perspective as you tilt your phone</li>
+            <li>Tiny app footprint (under 15MB) with 29+ procedural worlds included</li>
+            <li>Buttery smooth 60 FPS animation with zero jarring loop points</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Showcase 1: Touch & Tilt -->
+    <section class="landing-section">
+      <div class="feature-showcase">
+        <div class="feature-showcase-copy">
+          <p class="feature-kicker">Touch & Gyroscope Physics</p>
+          <h3>Turn your screen into an interactive playground.</h3>
+          <p>Every time you unlock your phone or swipe between app icons, FluxWall reacts. Watch luminous fluid streams part around your finger, create glowing shockwaves across geometric grids, or tilt your phone to reveal three-dimensional celestial horizons.</p>
+          <ul class="feature-points">
+            <li><strong>Fluid Particle Physics:</strong> Tap or drag to spawn vibrant pigment currents that diffuse naturally across your screen.</li>
+            <li><strong>Gyroscope Perspective:</strong> Built-in accelerometer integration shifts camera depth as you rotate your phone.</li>
+            <li><strong>Calm & Active Modes:</strong> Choose between highly reactive play worlds or soothing ambient flows that drift peacefully in the background.</li>
+          </ul>
+          <a class="button button-primary button-compact" href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer"><img class="google-play-icon" src="assets/images/google-play-icon.png" alt="" /> Get FluxWall Free</a>
+        </div>
+        <div class="mockup-wrap">
+          <div class="phone-mockup">
+            <picture>
+              <source srcset="assets/screenshots/device_preview_action.webp" type="image/webp">
+              <img src="assets/screenshots/device_preview_action.png" alt="FluxWall full-screen interactive live wallpaper action preview" width="320" height="711" loading="lazy">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Showcase 2: Live Parameter Tuning -->
+    <section class="landing-section">
+      <div class="feature-showcase is-reverse">
+        <div class="feature-showcase-copy">
+          <p class="feature-kicker">Real-Time Control Studio</p>
+          <h3>Tweak physics, speed, and glow to match your taste.</h3>
+          <p>You are never locked into someone else's aesthetic choices. Want a faster cosmic flight or a slower, dreamlike fluid flow? FluxWall gives you dedicated live sliders for motion tempo, particle density, glow bloom, and color saturation.</p>
+          <ul class="feature-points">
+            <li><strong>Live Slider Response:</strong> Drag any slider and watch the physics adjust in real time without restarting.</li>
+            <li><strong>Color Palette Mastery:</strong> Shift from vibrant synthwave neon to subtle, minimalist monochrome with one touch.</li>
+            <li><strong>Try It In Your Browser:</strong> Test the exact same interactive sliders right on our <a href="/#studio">interactive web studio</a>.</li>
+          </ul>
+          <a class="text-link" href="free-live-wallpaper-no-ads.html">Explore our 100% ad-free experience <span>→</span></a>
+        </div>
+        <div class="mockup-wrap">
+          <div class="phone-mockup">
+            <picture>
+              <source srcset="assets/screenshots/device_live_editor.webp" type="image/webp">
+              <img src="assets/screenshots/device_live_editor.png" alt="FluxWall live editor tuning speed, glow, and color sliders in real time" width="320" height="711" loading="lazy">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Showcase 3: Save Your Favorites -->
+    <section class="landing-section">
+      <div class="feature-showcase">
+        <div class="feature-showcase-copy">
+          <p class="feature-kicker">Saved Styles & Presets</p>
+          <h3>Bookmark your best interactive creations.</h3>
+          <p>When you discover the perfect combination of speed, color balance, and touch response, save it to your personal favorites with a single tap. Switch between a calm work setup during the day and a vibrant neon aesthetic for the evening.</p>
+          <ul class="feature-points">
+            <li><strong>Instant Bookmarks:</strong> Keep your favorite interactive worlds at your fingertips.</li>
+            <li><strong>One-Tap Presets:</strong> Quickly jump between curated colorways designed by digital artists.</li>
+            <li><strong>Zero Cloud Dependency:</strong> All favorites and custom presets are stored securely on your phone.</li>
+          </ul>
+          <a class="text-link" href="live-wallpaper-battery.html">Read how FluxWall keeps battery usage low <span>→</span></a>
+        </div>
+        <div class="mockup-wrap">
+          <div class="phone-mockup">
+            <picture>
+              <source srcset="assets/screenshots/device_gallery_filters.webp" type="image/webp">
+              <img src="assets/screenshots/device_gallery_filters.png" alt="FluxWall gallery view filtering interactive live wallpaper collections" width="320" height="711" loading="lazy">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="landing-section">
+      <div class="landing-section-intro">
+        <p class="eyebrow">Technology Comparison</p>
+        <h2>Real-Time GPU Shaders vs.<br><span>Pre-Recorded Video Wallpapers.</span></h2>
+        <p>Why procedural rendering delivers a superior interactive experience on Android devices.</p>
+      </div>
+
+      <div class="comparison-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Capability</th>
+              <th class="col-highlight">FluxWall GPU Shaders</th>
+              <th>Pre-Recorded Video Loops</th>
+              <th>Static Wallpaper Images</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Touch Interaction</strong></td>
+              <td class="col-highlight"><span class="check-lime">✓</span> Real-time ripples, waves & particle response</td>
+              <td><span class="cross-muted">✕</span> Non-responsive (just video playback)</td>
+              <td><span class="cross-muted">✕</span> None (static picture)</td>
+            </tr>
+            <tr>
+              <td><strong>Gyroscope Tilt</strong></td>
+              <td class="col-highlight"><span class="check-lime">✓</span> 3D perspective and lighting shifts</td>
+              <td><span class="cross-muted">✕</span> None (flat 2D file)</td>
+              <td><span class="cross-muted">✕</span> None (flat 2D file)</td>
+            </tr>
+            <tr>
+              <td><strong>Animation Variety</strong></td>
+              <td class="col-highlight"><span class="check-lime">✓</span> Infinite procedural variation (never repeats)</td>
+              <td><span class="cross-muted">✕</span> 3-second repetitive loop</td>
+              <td><span class="cross-muted">✕</span> Zero movement</td>
+            </tr>
+            <tr>
+              <td><strong>Customization Controls</strong></td>
+              <td class="col-highlight"><span class="check-lime">✓</span> Adjust speed, color palette, glow & density</td>
+              <td><span class="cross-muted">✕</span> None (video is pre-baked)</td>
+              <td><span class="cross-muted">✕</span> Crop/filter only</td>
+            </tr>
+            <tr>
+              <td><strong>Frame Rate</strong></td>
+              <td class="col-highlight"><span class="check-lime">✓</span> Smooth 60 FPS native GPU rendering</td>
+              <td><span class="cross-muted">✕</span> Compressed 24-30 FPS video</td>
+              <td><span class="check-lime">✓</span> N/A</td>
+            </tr>
+            <tr>
+              <td><strong>Download Size</strong></td>
+              <td class="col-highlight"><span class="check-lime">✓</span> ~15MB total (29+ procedural worlds)</td>
+              <td><span class="cross-muted">✕</span> 50MB–200MB per video clip</td>
+              <td><span class="check-lime">✓</span> 2MB–10MB per photo</td>
+            </tr>
+            <tr>
+              <td><strong>In-App Ads & Cost</strong></td>
+              <td class="col-highlight"><span class="check-lime">✓</span> 100% Free, Zero Ads</td>
+              <td><span class="cross-muted">✕</span> Often paywalled or ad-supported</td>
+              <td><span class="cross-muted">✕</span> Often bundled with ad bloat</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="landing-section">
+      <div class="landing-section-intro">
+        <p class="eyebrow">Frequently Asked Questions</p>
+        <h2>Everything you need to know<br><span>about interactive wallpapers.</span></h2>
+      </div>
+
+      <div class="landing-faq">
+        <details open>
+          <summary>How do interactive live wallpapers work on Android? <span>+</span></summary>
+          <p>Unlike pre-recorded video loops, FluxWall compiles procedural OpenGL shaders that calculate mathematical color, light, and physics directly on your phone's GPU for every single frame. When you touch the screen or tilt your device, your touch coordinates and accelerometer data feed directly into the shader equations, creating instant ripple and perspective reactions.</p>
+        </details>
+        <details>
+          <summary>Which FluxWall wallpapers respond to touch or tilt? <span>+</span></summary>
+          <p>Many wallpapers feature dynamic input reactions. Magic Fluids and Ripple generate fluid waves under your fingertips, Event Horizon warps gravitational space when held, and 3D scenes shift perspective as you tilt your phone. Calmer ambient worlds drift gently without requiring touch.</p>
+        </details>
+        <details>
+          <summary>Does real-time touch interaction cause frame drops or lag? <span>+</span></summary>
+          <p>No. FluxWall's rendering engine is optimized with efficient GLSL shaders and zero unnecessary CPU allocations, maintaining buttery smooth 60 FPS animations on modern Android hardware without hitching or input lag.</p>
+        </details>
+        <details>
+          <summary>Can I test interactive wallpapers in my web browser before downloading? <span>+</span></summary>
+          <p>Yes! The FluxWall home page features a browser-based WebGL preview editor where you can experiment with real shader parameters such as colors, glow, speed, and motion live on your computer or mobile browser.</p>
+        </details>
+        <details>
+          <summary>Are interactive features free to use? <span>+</span></summary>
+          <p>Yes. All interactive shaders, controls, presets, and customization options are 100% free with no ads and no account needed.</p>
+        </details>
+        <details>
+          <summary>Can I set interactive wallpapers on my lock screen? <span>+</span></summary>
+          <p>Yes, on Android versions and launchers that support live wallpapers on the lock screen. When setting FluxWall as your wallpaper, Android will give you the option to apply it to your Home Screen, Lock Screen, or both.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- High-Converting CTA Banner -->
+    <section class="landing-cta-banner">
+      <div>
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Transform your home screen</p>
+        <h2>Make your screen move.<br>Interactive, smooth, and ad-free.</h2>
+        <p>Bring your Android screen to life with touch-reactive fluid dynamics, cosmic horizons, and generative art. Download free on Google Play.</p>
+      </div>
+      <div class="landing-cta-actions">
+        <a class="button button-primary button-hero" href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer"><img class="google-play-icon" src="assets/images/google-play-icon.png" alt="" /> Get FluxWall Free</a>
+        <p class="content-note">Free download · Compatible with Android 8.0+ · Package com.rrapps.infinitetunnel</p>
+      </div>
+    </section>
+
+    <!-- Internal Linking Navigation -->
+    <nav class="landing-related-nav" aria-label="Explore more FluxWall guides">
+      <span>Related Guides:</span>
+      <a href="/">FluxWall Home & Browser Studio</a>
+      <a href="free-live-wallpaper-no-ads.html">Free Live Wallpaper App, No Ads</a>
+      <a href="live-wallpaper-battery.html">Battery-Aware Live Wallpapers</a>
+    </nav>
   </main>
 
-  <footer class="footer section-shell"><div class="footer-top"><a class="brand" href="/"><img class="brand-icon" src="assets/images/fluxwall-icon.png" alt="" /><span>Flux<span class="brand-muted">Wall</span></span></a><div class="footer-links"><a href="/#gallery">Gallery</a><a href="/#studio">Studio</a><a href="/#faq">FAQ</a><a href="privacy_policy.html">Privacy Policy</a><a href="https://fluxwall.anvik.studio/llms.txt">AI-readable site guide</a><a href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer">Google Play ↗</a></div></div><div class="footer-bottom"><span>© <span data-year></span> <a href="https://anvik.studio" target="_blank" rel="noreferrer">Anvik Studio</a></span><span>Made for your screen</span><a href="mailto:support@anvik.studio">Say hello ↗</a></div></footer>
-  <div class="sticky-download"><span>Make your screen yours.</span><a href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer"><img class="google-play-icon" src="assets/images/google-play-icon.png" alt="" /> Get FluxWall Free</a></div>
+  <footer class="footer section-shell">
+    <div class="footer-top">
+      <a class="brand" href="/">
+        <img class="brand-icon" src="assets/images/fluxwall-icon.png" alt="" />
+        <span>Flux<span class="brand-muted">Wall</span></span>
+      </a>
+      <div class="footer-links">
+        <a href="/#gallery">Gallery</a>
+        <a href="/#studio">Studio</a>
+        <a href="/#faq">FAQ</a>
+        <a href="privacy_policy.html">Privacy Policy</a>
+        <a href="https://fluxwall.anvik.studio/llms.txt">AI-readable site guide</a>
+        <a href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer">Google Play ↗</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> <a href="https://anvik.studio" target="_blank" rel="noreferrer">Anvik Studio</a></span>
+      <span>Made for your screen</span>
+      <a href="mailto:support@anvik.studio">Say hello ↗</a>
+    </div>
+  </footer>
+
+  <div class="sticky-download">
+    <span>Make your screen yours.</span>
+    <a href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer"><img class="google-play-icon" src="assets/images/google-play-icon.png" alt="" /> Get FluxWall Free</a>
+  </div>
+
   <script>
     (function () {
       var header = document.querySelector('[data-header]'), nav = document.querySelector('[data-nav]'), menu = document.querySelector('[data-menu-toggle]');

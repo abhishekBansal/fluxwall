@@ -76,5 +76,8 @@ The website's public catalog is intentionally curated. The private application r
 ## Guides
 
 - Interactive live wallpaper for Android: https://fluxwall.anvik.studio/interactive-live-wallpaper-android.html
+  Focuses on touch-reactive fluid physics, gyroscope tilt parallax, real-time 60 FPS GPU rendering, and customizable motion sliders.
 - Live wallpaper that doesn't drain your battery: https://fluxwall.anvik.studio/live-wallpaper-battery.html
+  Explains smart lifecycle pausing (0% drain when screen is off or in other apps), zero wake locks, 30 FPS caps, and true AMOLED black backgrounds.
 - Free live wallpaper app, no ads: https://fluxwall.anvik.studio/free-live-wallpaper-no-ads.html
+  Details FluxWall's 100% free model: zero in-app ads, no accounts or logins, offline preset saving, and all 29+ worlds unlocked from day one.

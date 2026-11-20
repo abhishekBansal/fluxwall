@@ -8,7 +8,8 @@ This repository is the public FluxWall marketing site for `fluxwall.anvik.studio
 - `css/site.css` contains the complete responsive design system and layout.
 - `js/app.js` owns the gallery, preview editor, controls, navigation, and WebGL renderers.
 - `js/shaders.js` contains the five configurable live-preview definitions and their shader source.
-- `assets/screenshots/` contains the public wallpaper thumbnails.
+- `free-live-wallpaper-no-ads.html`, `interactive-live-wallpaper-android.html`, and `live-wallpaper-battery.html` are the search-targeted conversion landing pages.
+- `assets/screenshots/` contains the public wallpaper thumbnails and web-optimized app screenshots (WebP and PNG).
 - `assets/videos/` contains the available wallpaper media assets.
 - `assets/images/` contains marketing screenshots, artwork, and the optimized Google Play icon.
 - `llms.txt` contains the public AI-readable site guide.

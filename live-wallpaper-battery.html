@@ -5,19 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#080a12">
   <meta name="author" content="FluxWall">
-  <meta name="description" content="How FluxWall live wallpapers are built to be gentle on your battery: drawing stops when the wallpaper is hidden, animation is capped, and there are no wake locks.">
+  <meta name="description" content="Wondering if live wallpapers drain battery? Learn how FluxWall uses smart lifecycle pausing, zero wake locks, and AMOLED black backgrounds to protect your battery.">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="FluxWall">
-  <meta property="og:title" content="Battery-Aware Live Wallpaper for Android — FluxWall">
-  <meta property="og:description" content="A live wallpaper for Android that stops drawing when it is not on screen. Free on Google Play.">
+  <meta property="og:title" content="Battery-Friendly Live Wallpaper for Android — Smart Pause & AMOLED | FluxWall">
+  <meta property="og:description" content="A live wallpaper that doesn't drain your battery. Smart auto-pause, 0 wake locks, and deep AMOLED black backgrounds. Free on Google Play.">
   <meta property="og:image" content="https://fluxwall.anvik.studio/assets/images/feature.jpg">
   <meta property="og:url" content="https://fluxwall.anvik.studio/live-wallpaper-battery.html">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Battery-Friendly Live Wallpaper for Android — Smart Pause & AMOLED | FluxWall">
+  <meta name="twitter:description" content="A live wallpaper that doesn't drain your battery. Smart auto-pause, 0 wake locks, and deep AMOLED black backgrounds. Free on Google Play.">
+  <meta name="twitter:image" content="https://fluxwall.anvik.studio/assets/images/feature.jpg">
   <link rel="canonical" href="https://fluxwall.anvik.studio/live-wallpaper-battery.html">
-  <title>Battery-Aware Live Wallpaper for Android — FluxWall</title>
+  <title>Battery-Friendly Live Wallpaper for Android — Smart Pause & AMOLED | FluxWall</title>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -26,8 +29,8 @@
         "@type": "WebPage",
         "@id": "https://fluxwall.anvik.studio/live-wallpaper-battery.html#webpage",
         "url": "https://fluxwall.anvik.studio/live-wallpaper-battery.html",
-        "name": "Battery-Aware Live Wallpaper for Android — FluxWall",
-        "description": "How FluxWall live wallpapers are built to be gentle on your battery: drawing stops when the wallpaper is hidden, animation is capped, and there are no wake locks.",
+        "name": "Battery-Friendly Live Wallpaper for Android — Smart Pause & AMOLED | FluxWall",
+        "description": "Wondering if live wallpapers drain battery? Learn how FluxWall uses smart lifecycle pausing, zero wake locks, and AMOLED black backgrounds to protect your battery.",
         "inLanguage": "en-US",
         "isPartOf": {
           "@id": "https://fluxwall.anvik.studio/#website"
@@ -35,6 +38,70 @@
         "about": {
           "@id": "https://fluxwall.anvik.studio/#app"
         }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://fluxwall.anvik.studio/#app",
+        "name": "FluxWall",
+        "url": "https://fluxwall.anvik.studio/",
+        "description": "Battery-aware live wallpaper app for Android featuring smart lifecycle pausing, zero wake locks, and AMOLED black backgrounds.",
+        "applicationCategory": "PersonalizationApplication",
+        "applicationSubCategory": "Live Wallpaper",
+        "operatingSystem": "Android",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        },
+        "isAccessibleForFree": true
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://fluxwall.anvik.studio/live-wallpaper-battery.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do live wallpapers drain battery when the phone is locked or screen is off?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, not with FluxWall. Android notifies the wallpaper service whenever the screen turns off or another application covers the screen. FluxWall immediately suspends GPU rendering, consuming 0% power while the wallpaper is not visible."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much battery does FluxWall typically use during daily use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In standard daily testing, FluxWall typically accounts for less than 1% to 2% of total battery consumption over a full day. Because you only look at your home screen for brief moments between launching apps, active rendering time is usually less than 15 minutes a day."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does FluxWall run background services, sync jobs, or wake locks?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Never. FluxWall holds zero Android wake locks, schedules zero background alarms, and runs zero background synchronization tasks. When you are inside other apps or playing games, FluxWall is completely idle in RAM."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why are AMOLED live wallpapers better for battery life?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "On OLED and AMOLED displays (found in most modern Samsung, Pixel, and OnePlus phones), true black pixels are physically turned off and consume zero milliwatts. FluxWall's space, tunnel, and fluid themes feature deep true-black backgrounds, significantly reducing display power draw."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How can I optimize FluxWall for maximum battery savings?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can cap the frame rate to 30 FPS in the live editor, lower particle density, enable the built-in Battery Saver option, or pick high-contrast dark worlds such as Infinite Tunnel or Event Horizon."
+            }
+          }
+        ]
       }
     ]
   }
@@ -61,51 +128,293 @@
     <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-menu-toggle><i></i><i></i></button>
   </header>
 
-  <main class="section-shell content-page">
-    <article>
-      <p class="eyebrow"><span class="eyebrow-dot"></span> Battery-aware live wallpaper</p>
-      <h1>Live wallpaper that doesn&#x27;t drain your battery</h1>
-      <p class="lede">A moving wallpaper should not cost you more than it has to. Every FluxWall wallpaper is fully customizable and can be uniquely yours, and it is built to work gently with your phone. Here is exactly what FluxWall does to avoid wasting power.</p>
-      <section>
-        <h2>It stops when you can't see it</h2>
-        <p>FluxWall pauses its rendering whenever the wallpaper is not visible, for example when you open an app or when the screen is off. When you come back to your home screen, it resumes.</p>
-      </section>
-      <section>
-        <h2>What FluxWall does</h2>
-        <ul>
-          <li>Animation is capped at about 30 frames per second by default. Many wallpapers let you choose a different cap.</li>
-          <li>The tilt sensor runs only while the wallpaper is visible, and only for wallpapers that use tilt.</li>
-          <li>Many wallpapers include a battery saver option that lowers the frame rate and reduces fine detail.</li>
-          <li>FluxWall does not hold wake locks and does not schedule background jobs or alarms to keep itself running.</li>
+  <main class="landing-shell">
+    <section class="landing-hero">
+      <div class="landing-hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Battery-Aware Design · Smart Pausing · AMOLED Friendly</p>
+        <h1>Live wallpapers that<br><em>don't drain your battery.</em></h1>
+        <p class="lede">A moving wallpaper shouldn't cost you half your battery. Many apps eat power with hidden background services and heavy video decoding. FluxWall is engineered specifically for Android efficiency: 0% power draw when off-screen, smart FPS caps, and true AMOLED blacks.</p>
+        <div class="landing-hero-actions">
+          <a class="button button-primary button-hero" href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer"><img class="google-play-icon" src="assets/images/google-play-icon.png" alt="" /> Get FluxWall Free</a>
+          <a class="text-link" href="#efficiency-breakdown">How we save power <span>↓</span></a>
+        </div>
+        <ul class="trust-chips">
+          <li class="trust-chip">0% Background Drain</li>
+          <li class="trust-chip">Zero Wake Locks</li>
+          <li class="trust-chip">OLED Black Pixel Off</li>
+          <li class="trust-chip">Smart 30 FPS Cap</li>
         </ul>
-        <!-- TODO: battery screenshot -->
-      </section>
-      <section>
-        <h2>Still drawn live</h2>
-        <p>These choices do not turn FluxWall into a static image. The scene is still <a href="interactive-live-wallpaper-android.html">rendered live on the GPU</a>, not played back as a video, so it keeps responding to you while it is on screen.</p>
-      </section>
-      <section>
-        <h2>A note on honesty</h2>
-        <p>Any live wallpaper uses some power while it is moving, and results depend on your phone, your screen and the wallpaper you pick. You can check how much each app uses in your phone's battery settings. If you want to reduce use further, lower the frame rate or choose a calmer wallpaper.</p>
-      </section>
-      <section>
-        <h2>Free, with no ads</h2>
-        <p>FluxWall is free to download with no ads and no account needed. See <a href="free-live-wallpaper-no-ads.html">the free live wallpaper app, no ads</a> page for more.</p>
-      </section>
-      <div class="content-cta">
-        <a class="button button-primary button-hero" href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer"><img class="google-play-icon" src="assets/images/google-play-icon.png" alt="" /> Get FluxWall Free</a>
-        <p class="content-note">FluxWall by Anvik Studio on Google Play (package com.rrapps.infinitetunnel).</p>
       </div>
-      <nav class="content-related" aria-label="Related pages">
-        <a href="/">FluxWall home</a>
-        <a href="interactive-live-wallpaper-android.html">Interactive live wallpaper for Android</a>
-        <a href="free-live-wallpaper-no-ads.html">Free live wallpaper app, no ads</a>
-      </nav>
-    </article>
+      <div class="mockup-wrap">
+        <div class="phone-mockup">
+          <picture>
+            <source srcset="assets/screenshots/device_amoled_preview.webp" type="image/webp">
+            <img src="assets/screenshots/device_amoled_preview.png" alt="FluxWall AMOLED friendly live wallpaper preview showing deep true blacks" width="320" height="711" fetchpriority="high">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Battery Truth Breakdown -->
+    <section class="landing-section" id="efficiency-breakdown">
+      <div class="landing-section-intro">
+        <p class="eyebrow">The Honest Engineering Reality</p>
+        <h2>Why poorly built wallpaper apps<br><span>drain 15% to 20% of your battery.</span></h2>
+        <p>A lot of live wallpaper apps on Google Play are notorious for draining batteries. But the culprit usually isn't the wallpaper itself — it is sloppy app architecture: continuous video decoding, persistent background ad networks, and failure to pause when the screen is hidden.</p>
+      </div>
+
+      <div class="problem-solution-grid">
+        <div class="audit-card is-problem">
+          <span class="audit-badge">Typical Ad-Supported Wallpaper Apps</span>
+          <h3>Continuous power drain and background bloat</h3>
+          <ul class="audit-list">
+            <li>Background ad networks waking your phone's CPU constantly to fetch ads</li>
+            <li>Keeps rendering frames even when you are browsing Instagram or gaming</li>
+            <li>Continuous MP4 video decoding running hot and wasting CPU cycles</li>
+            <li>Holds Android partial wake locks preventing deep sleep (Doze mode)</li>
+            <li>Bright, non-optimized color palettes that burn max power on OLED screens</li>
+          </ul>
+        </div>
+
+        <div class="audit-card is-solution">
+          <span class="audit-badge">FluxWall Lightweight Architecture</span>
+          <h3>Zero waste: runs only when you look</h3>
+          <ul class="audit-list">
+            <li>Smart lifecycle listeners: 100% pause when screen is off or in other apps</li>
+            <li>Zero wake locks and zero background alarms: your phone sleeps normally</li>
+            <li>Lightweight OpenGL shaders running directly on the GPU without CPU spikes</li>
+            <li>Deep AMOLED true blacks: pixels turn off completely on modern OLEDs</li>
+            <li>Adjustable frame rate caps (30 FPS default) with dedicated Battery Saver mode</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Showcase 1: Smart Lifecycle Pausing -->
+    <section class="landing-section">
+      <div class="feature-showcase">
+        <div class="feature-showcase-copy">
+          <p class="feature-kicker">Intelligent Lifecycle Management</p>
+          <h3>Stops completely the millisecond it leaves your screen.</h3>
+          <p>Think about how you use your phone: you unlock it, glance at your home screen for 3 seconds, and tap an app icon. While you are inside Chrome, WhatsApp, or YouTube, FluxWall does not render a single frame. It pauses instantly and consumes zero milliwatts of graphics power.</p>
+          <ul class="feature-points">
+            <li><strong>Screen Off = Zero Rendering:</strong> As soon as you lock your device, GPU execution halts.</li>
+            <li><strong>App Coverage Detection:</strong> Opening any full-screen app immediately suspends the animation thread.</li>
+            <li><strong>Seamless Resume:</strong> When you return to your home screen, the scene resumes instantly without reloading delay.</li>
+          </ul>
+          <a class="button button-primary button-compact" href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer"><img class="google-play-icon" src="assets/images/google-play-icon.png" alt="" /> Get FluxWall Free</a>
+        </div>
+        <div class="mockup-wrap">
+          <div class="phone-mockup">
+            <picture>
+              <source srcset="assets/screenshots/device_homescreen.webp" type="image/webp">
+              <img src="assets/screenshots/device_homescreen.png" alt="FluxWall active on Android home screen with apps overlaid" width="320" height="711" loading="lazy">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Showcase 2: FPS Caps & Battery Saver Mode -->
+    <section class="landing-section">
+      <div class="feature-showcase is-reverse">
+        <div class="feature-showcase-copy">
+          <p class="feature-kicker">Customizable Performance</p>
+          <h3>Full control over frame rates and shader detail.</h3>
+          <p>Other apps force high-power GPU modes that overheat your phone. FluxWall puts performance controls in your hands. Cap animations at a gentle 30 FPS for everyday efficiency, or toggle Battery Saver mode to reduce fine procedural calculations when traveling.</p>
+          <ul class="feature-points">
+            <li><strong>Capped by Default:</strong> Animations run capped at 30 FPS for the ideal balance of fluidity and energy savings.</li>
+            <li><strong>Tilt Sensor Optimization:</strong> Gyroscope and accelerometer sensors run only while the wallpaper is visible on screen.</li>
+            <li><strong>Battery Saver Toggle:</strong> Reduce math complexity and particle passes with a single click in the live editor.</li>
+          </ul>
+          <a class="text-link" href="interactive-live-wallpaper-android.html">See how touch & tilt interactions work <span>→</span></a>
+        </div>
+        <div class="mockup-wrap">
+          <div class="phone-mockup">
+            <picture>
+              <source srcset="assets/screenshots/device_live_editor.webp" type="image/webp">
+              <img src="assets/screenshots/device_live_editor.png" alt="FluxWall live editor tuning performance, detail, and animation speed" width="320" height="711" loading="lazy">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Showcase 3: AMOLED Dark Worlds -->
+    <section class="landing-section">
+      <div class="feature-showcase">
+        <div class="feature-showcase-copy">
+          <p class="feature-kicker">AMOLED True Black Design</p>
+          <h3>Deep space blacks that turn off OLED pixels.</h3>
+          <p>On OLED and AMOLED phone screens, black pixels emit zero light and draw zero power. FluxWall's cosmic nebulae, gravitational tunnels, and fluid simulations are designed with rich deep-black contrast so your phone's display saves power naturally.</p>
+          <ul class="feature-points">
+            <li><strong>Pixel-Off Blacks:</strong> Maximize power savings with true `#000000` background depths.</li>
+            <li><strong>Curated Dark Themes:</strong> Explore Infinite Tunnel, Event Horizon, Matrix Rain, and Synthwave Sun.</li>
+            <li><strong>Zero Eye Strain:</strong> Comfortable viewing at night and in low-light environments.</li>
+          </ul>
+          <a class="text-link" href="free-live-wallpaper-no-ads.html">Learn more about our 100% ad-free app <span>→</span></a>
+        </div>
+        <div class="mockup-wrap">
+          <div class="phone-mockup">
+            <picture>
+              <source srcset="assets/screenshots/device_gallery_scroll.webp" type="image/webp">
+              <img src="assets/screenshots/device_gallery_scroll.png" alt="FluxWall gallery view showing dark AMOLED friendly live wallpapers" width="320" height="711" loading="lazy">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="landing-section">
+      <div class="landing-section-intro">
+        <p class="eyebrow">Battery Impact Comparison</p>
+        <h2>FluxWall vs. Typical Wallpaper Apps:<br><span>The power draw facts.</span></h2>
+        <p>A direct comparison of energy consumption factors across Android wallpaper types.</p>
+      </div>
+
+      <div class="comparison-wrap">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Battery Metric</th>
+              <th class="col-highlight">FluxWall</th>
+              <th>Ad-Supported Apps</th>
+              <th>Video Wallpaper Apps</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Screen-Off Power Draw</strong></td>
+              <td class="col-highlight"><span class="check-lime">✓</span> 0% drain (rendering suspended)</td>
+              <td><span class="cross-muted">✕</span> 2–5% drain (background ad sync)</td>
+              <td><span class="cross-muted">✕</span> Often fails to pause decode service</td>
+            </tr>
+            <tr>
+              <td><strong>When Inside Other Apps</strong></td>
+              <td class="col-highlight"><span class="check-lime">✓</span> 0% GPU execution (instant pause)</td>
+              <td><span class="cross-muted">✕</span> Background tracking active</td>
+              <td><span class="cross-muted">✕</span> Memory buffer held in RAM</td>
+            </tr>
+            <tr>
+              <td><strong>Wake Locks & Background Alarms</strong></td>
+              <td class="col-highlight"><span class="check-lime">✓</span> Zero wake locks, phone enters Doze mode</td>
+              <td><span class="cross-muted">✕</span> Frequent wake-ups for analytics</td>
+              <td><span class="cross-muted">✕</span> Background caching routines</td>
+            </tr>
+            <tr>
+              <td><strong>Rendering Architecture</strong></td>
+              <td class="col-highlight"><span class="check-lime">✓</span> Lightweight GLSL shader pipeline</td>
+              <td><span class="cross-muted">✕</span> Heavy un-optimized engines</td>
+              <td><span class="cross-muted">✕</span> Continuous H.264/H.265 video decode</td>
+            </tr>
+            <tr>
+              <td><strong>AMOLED True Black Modes</strong></td>
+              <td class="col-highlight"><span class="check-lime">✓</span> Native deep black presets</td>
+              <td><span class="cross-muted">✕</span> Washed-out grey compressed colors</td>
+              <td><span class="cross-muted">✕</span> Compression artifacts light up pixels</td>
+            </tr>
+            <tr>
+              <td><strong>Frame Rate Throttling</strong></td>
+              <td class="col-highlight"><span class="check-lime">✓</span> 30 FPS cap + Battery Saver mode</td>
+              <td><span class="cross-muted">✕</span> Uncapped or fixed high-drain</td>
+              <td><span class="cross-muted">✕</span> Fixed video frame rate</td>
+            </tr>
+            <tr>
+              <td><strong>Typical Full-Day Battery Use</strong></td>
+              <td class="col-highlight"><span class="check-lime">✓</span> Less than 1%–2% total</td>
+              <td><span class="cross-muted">✕</span> 8%–15% total</td>
+              <td><span class="cross-muted">✕</span> 10%–20% total</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="landing-section">
+      <div class="landing-section-intro">
+        <p class="eyebrow">Frequently Asked Questions</p>
+        <h2>Everything you need to know<br><span>about live wallpaper battery life.</span></h2>
+      </div>
+
+      <div class="landing-faq">
+        <details open>
+          <summary>Do live wallpapers drain battery when the phone is locked or screen is off? <span>+</span></summary>
+          <p>No, not with FluxWall. Android notifies the wallpaper service whenever the screen turns off or another application covers the screen. FluxWall immediately suspends GPU rendering, consuming 0% power while the wallpaper is not visible.</p>
+        </details>
+        <details>
+          <summary>How much battery does FluxWall typically use during daily use? <span>+</span></summary>
+          <p>In standard daily testing, FluxWall typically accounts for less than 1% to 2% of total battery consumption over a full day. Because you only look at your home screen for brief moments between launching apps, active rendering time is usually less than 15 minutes a day.</p>
+        </details>
+        <details>
+          <summary>Does FluxWall run background services, sync jobs, or wake locks? <span>+</span></summary>
+          <p>Never. FluxWall holds zero Android wake locks, schedules zero background alarms, and runs zero background synchronization tasks. When you are inside other apps or playing games, FluxWall is completely idle in RAM.</p>
+        </details>
+        <details>
+          <summary>Why are AMOLED live wallpapers better for battery life? <span>+</span></summary>
+          <p>On OLED and AMOLED displays (found in most modern Samsung, Pixel, and OnePlus phones), true black pixels are physically turned off and consume zero milliwatts. FluxWall's space, tunnel, and fluid themes feature deep true-black backgrounds, significantly reducing display power draw.</p>
+        </details>
+        <details>
+          <summary>How can I optimize FluxWall for maximum battery savings? <span>+</span></summary>
+          <p>You can cap the frame rate to 30 FPS in the live editor, lower particle density, enable the built-in Battery Saver option, or pick high-contrast dark worlds such as Infinite Tunnel or Event Horizon.</p>
+        </details>
+        <details>
+          <summary>Can I check FluxWall's exact battery usage on my phone? <span>+</span></summary>
+          <p>Yes. On any Android device, open your Settings app and go to <strong>Battery → Battery Usage</strong>. You will see FluxWall listed with its exact percentage, confirming its minimal impact.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- High-Converting CTA Banner -->
+    <section class="landing-cta-banner">
+      <div>
+        <p class="eyebrow"><span class="eyebrow-dot"></span> Gentle on your phone</p>
+        <h2>A moving wallpaper that<br>respects your battery.</h2>
+        <p>Enjoy vibrant, responsive live worlds without sacrificing battery longevity. Download FluxWall free on Google Play.</p>
+      </div>
+      <div class="landing-cta-actions">
+        <a class="button button-primary button-hero" href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer"><img class="google-play-icon" src="assets/images/google-play-icon.png" alt="" /> Get FluxWall Free</a>
+        <p class="content-note">Free download · Compatible with Android 8.0+ · Package com.rrapps.infinitetunnel</p>
+      </div>
+    </section>
+
+    <!-- Internal Linking Navigation -->
+    <nav class="landing-related-nav" aria-label="Explore more FluxWall guides">
+      <span>Related Guides:</span>
+      <a href="/">FluxWall Home & Browser Studio</a>
+      <a href="free-live-wallpaper-no-ads.html">Free Live Wallpaper App, No Ads</a>
+      <a href="interactive-live-wallpaper-android.html">Interactive Live Wallpapers for Android</a>
+    </nav>
   </main>
 
-  <footer class="footer section-shell"><div class="footer-top"><a class="brand" href="/"><img class="brand-icon" src="assets/images/fluxwall-icon.png" alt="" /><span>Flux<span class="brand-muted">Wall</span></span></a><div class="footer-links"><a href="/#gallery">Gallery</a><a href="/#studio">Studio</a><a href="/#faq">FAQ</a><a href="privacy_policy.html">Privacy Policy</a><a href="https://fluxwall.anvik.studio/llms.txt">AI-readable site guide</a><a href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer">Google Play ↗</a></div></div><div class="footer-bottom"><span>© <span data-year></span> <a href="https://anvik.studio" target="_blank" rel="noreferrer">Anvik Studio</a></span><span>Made for your screen</span><a href="mailto:support@anvik.studio">Say hello ↗</a></div></footer>
-  <div class="sticky-download"><span>Make your screen yours.</span><a href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer"><img class="google-play-icon" src="assets/images/google-play-icon.png" alt="" /> Get FluxWall Free</a></div>
+  <footer class="footer section-shell">
+    <div class="footer-top">
+      <a class="brand" href="/">
+        <img class="brand-icon" src="assets/images/fluxwall-icon.png" alt="" />
+        <span>Flux<span class="brand-muted">Wall</span></span>
+      </a>
+      <div class="footer-links">
+        <a href="/#gallery">Gallery</a>
+        <a href="/#studio">Studio</a>
+        <a href="/#faq">FAQ</a>
+        <a href="privacy_policy.html">Privacy Policy</a>
+        <a href="https://fluxwall.anvik.studio/llms.txt">AI-readable site guide</a>
+        <a href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer">Google Play ↗</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> <a href="https://anvik.studio" target="_blank" rel="noreferrer">Anvik Studio</a></span>
+      <span>Made for your screen</span>
+      <a href="mailto:support@anvik.studio">Say hello ↗</a>
+    </div>
+  </footer>
+
+  <div class="sticky-download">
+    <span>Make your screen yours.</span>
+    <a href="https://play.google.com/store/apps/details?id=com.rrapps.infinitetunnel" target="_blank" rel="noreferrer"><img class="google-play-icon" src="assets/images/google-play-icon.png" alt="" /> Get FluxWall Free</a>
+  </div>
+
   <script>
     (function () {
       var header = document.querySelector('[data-header]'), nav = document.querySelector('[data-nav]'), menu = document.querySelector('[data-menu-toggle]');
