@@ -26,7 +26,7 @@ The public website showcases five curated experiences:
 
 ## Full wallpaper collection
 
-The Android app includes 29 live wallpapers. The website shows a thumbnail for each one:
+The Android app includes 25+ live wallpapers. The website shows a thumbnail for each one:
 
 Infinite Tunnel, Magic Fluids, Event Horizon, Ripple, Nebula Voyage, Fractals, Aurora Field, Ink in Water, Plasma, Grand Spiral, Synthwave Sun, Downpour, Rain on Glass, Lava Lamp, Fireplace, Jellyfish Drift, Celestial Tide, Liquid Metals, Crystal Cluster, Silver Blade, Matrix Rain, Wireframe Mountains, Endless Stars, Fireflies, Pulse Lines, Hexagonal Grids, Perlin Noise, Blooming Flowers and Galaxy.
 
@@ -80,4 +80,4 @@ The website's public catalog is intentionally curated. The private application r
 - Live wallpaper that doesn't drain your battery: https://fluxwall.anvik.studio/live-wallpaper-battery.html
   Explains smart lifecycle pausing (0% drain when screen is off or in other apps), zero wake locks, 30 FPS caps, and true AMOLED black backgrounds.
 - Free live wallpaper app, no ads: https://fluxwall.anvik.studio/free-live-wallpaper-no-ads.html
-  Details FluxWall's 100% free model: zero in-app ads, no accounts or logins, offline preset saving, and all 29+ worlds unlocked from day one.
+  Details FluxWall's model: zero in-app ads, no accounts or logins, offline preset saving, 20+ free worlds to apply, and all 25+ worlds free to customize in the live preview studio, with optional FluxWall Pro / individual unlocks for premium wallpapers.
